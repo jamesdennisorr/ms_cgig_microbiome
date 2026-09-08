@@ -1,0 +1,19 @@
+"Metric","Comparison","p_adj_bonf"
+"Bray-Curtis","Control vs Antibiotics",0.6834
+"Bray-Curtis","Control vs High temperature",1
+"Bray-Curtis","Control vs Antibiotics + HT",1
+"Bray-Curtis","Antibiotics vs High temperature",0.543
+"Bray-Curtis","Antibiotics vs Antibiotics + HT",1
+"Bray-Curtis","High temperature vs Antibiotics + HT",0.9846
+"Weighted UniFrac","Control vs Antibiotics",1
+"Weighted UniFrac","Control vs High temperature",1
+"Weighted UniFrac","Control vs Antibiotics + HT",1
+"Weighted UniFrac","Antibiotics vs High temperature",1
+"Weighted UniFrac","Antibiotics vs Antibiotics + HT",1
+"Weighted UniFrac","High temperature vs Antibiotics + HT",1
+"Unweighted UniFrac","Control vs Antibiotics",0.0042
+"Unweighted UniFrac","Control vs High temperature",0.6048
+"Unweighted UniFrac","Control vs Antibiotics + HT",0.1176
+"Unweighted UniFrac","Antibiotics vs High temperature",0.7998
+"Unweighted UniFrac","Antibiotics vs Antibiotics + HT",1
+"Unweighted UniFrac","High temperature vs Antibiotics + HT",1

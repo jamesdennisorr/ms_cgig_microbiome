@@ -1,0 +1,39 @@
+# R session files
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Large data files (use SRA/Zenodo instead)
+data/raw/*.fastq
+data/raw/*.fastq.gz
+data/raw/*.fq
+data/raw/*.fq.gz
+data/raw/filtered/
+
+# SILVA database (too large for git)
+data/raw/*.fa
+data/raw/silva_*
+
+# Temporary files
+Rplots.pdf
+*.log
+*.tmp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.idea/
+.vscode/
+
+# Large intermediate files. Both cases are listed: gitignore patterns are
+# case-sensitive on Linux, so *.rds alone would not catch the .RDS the
+# pipeline actually reads.
+*.rds
+*.RDS
+!data/processed/*.rds
+!data/processed/*.RDS

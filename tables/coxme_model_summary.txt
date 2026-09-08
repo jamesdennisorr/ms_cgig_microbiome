@@ -1,0 +1,74 @@
+
+=== coxme model ===
+
+Cox mixed-effects model fit by maximum likelihood
+  Data: dat.df
+  events, n = 80, 160
+  Iterations= 11 70 
+                    NULL Integrated    Fitted
+Log-likelihood -381.8117  -355.4209 -340.8391
+
+                  Chisq    df          p   AIC   BIC
+Integrated loglik 52.78  4.00 9.4670e-11 44.78 35.25
+ Penalized loglik 81.95 11.28 8.3578e-13 59.38 32.50
+
+Model:  Surv(TE, Binary) ~ treatment + (1 | well) 
+Fixed coefficients
+                              coef exp(coef)  se(coef)    z      p
+treatmentAntibiotics      1.298037  3.662102 0.7393241 1.76 0.0790
+treatmentHigh temperature 2.074601  7.961372 0.7200983 2.88 0.0040
+treatmentAntibiotics + HT 2.000906  7.395755 0.7224617 2.77 0.0056
+
+Random effects
+ Group Variable  Std Dev   Variance 
+ well  Intercept 0.7852398 0.6166015
+
+=== Random effect variance ===
+
+$well
+Intercept 
+0.6166015 
+
+
+=== Standard Cox (PH diagnostics only) ===
+
+Call:
+coxph(formula = Surv(TE, Binary) ~ treatment, data = dat.df, 
+    ties = "efron")
+
+  n= 160, number of events= 80 
+
+                            coef exp(coef) se(coef)     z Pr(>|z|)    
+treatmentAntibiotics      1.3587    3.8911   0.4686 2.899  0.00374 ** 
+treatmentHigh temperature 1.9904    7.3186   0.4510 4.413 1.02e-05 ***
+treatmentAntibiotics + HT 1.9318    6.9022   0.4523 4.271 1.94e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                          exp(coef) exp(-coef) lower .95 upper .95
+treatmentAntibiotics          3.891     0.2570     1.553     9.749
+treatmentHigh temperature     7.319     0.1366     3.024    17.714
+treatmentAntibiotics + HT     6.902     0.1449     2.844    16.749
+
+Concordance= 0.726  (se = 0.035 )
+Likelihood ratio test= 33.78  on 3 df,   p=2e-07
+Wald test            = 23.15  on 3 df,   p=4e-05
+Score (logrank) test = 29.32  on 3 df,   p=2e-06
+
+
+=== PH assumption (Schoenfeld) ===
+
+          chisq df    p
+treatment  3.18  3 0.36
+GLOBAL     3.18  3 0.36
+
+=== HR table ===
+
+                                 Treatment       HR  CI_lower CI_upper
+treatmentAntibiotics           Antibiotics 3.662102 0.8598152 15.59753
+treatmentHigh temperature High temperature 7.961372 1.9410106 32.65487
+treatmentAntibiotics + HT Antibiotics + HT 7.395755 1.7947777 30.47575
+                              p_value
+treatmentAntibiotics      0.079138233
+treatmentHigh temperature 0.003964187
+treatmentAntibiotics + HT 0.005613086

@@ -1,0 +1,4 @@
+"Treatment","HR","CI_lower","CI_upper","p_value"
+"Antibiotics",3.66,0.86,15.6,0.0791
+"High temperature",7.96,1.94,32.65,0.004
+"Antibiotics + HT",7.4,1.79,30.48,0.0056

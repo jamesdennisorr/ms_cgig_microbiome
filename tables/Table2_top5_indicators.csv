@@ -1,0 +1,17 @@
+"Taxon","Family","Class","Treatment","IndVal","p_value"
+"Vibrio","Vibrionaceae","Gammaproteobacteria","Antibiotics",0.6,4e-04
+"BD1-7 clade","Spongiibacteraceae","Gammaproteobacteria","Antibiotics",0.581,4e-04
+"Vibrio","Vibrionaceae","Gammaproteobacteria","Antibiotics",0.563,8e-04
+"Cryomorphaceae (unclassified)","Cryomorphaceae","Bacteroidia","Antibiotics",0.551,0.0017
+"Psychroserpens","Flavobacteriaceae","Bacteroidia","Antibiotics",0.525,0.0017
+"Sandaracinaceae (unclassified)","Sandaracinaceae","Polyangia","Antibiotics + HT",0.555,0.0013
+"Lewinella","Saprospiraceae","Bacteroidia","Antibiotics + HT",0.503,0.0041
+"[Caedibacter] taeniospiralis group","Francisellaceae","Gammaproteobacteria","Antibiotics + HT",0.501,0.0041
+"Ardenticatenaceae (unclassified)","Ardenticatenaceae","Anaerolineae","Antibiotics + HT",0.489,0.005
+"SCGC AAA164-E04","Pedosphaeraceae","Verrucomicrobiae","Antibiotics + HT",0.467,0.0111
+"Microbacteriaceae (unclassified)","Microbacteriaceae","Actinobacteria","Control",0.381,0.0431
+"Oceanibulbus","Rhodobacteraceae","Alphaproteobacteria","High temperature",0.491,0.0036
+"Oceanibulbus","Rhodobacteraceae","Alphaproteobacteria","High temperature",0.489,0.0046
+"Saprospiraceae (unclassified)","Saprospiraceae","Bacteroidia","High temperature",0.459,0.0155
+"Rhodobacteraceae (unclassified)","Rhodobacteraceae","Alphaproteobacteria","High temperature",0.455,0.012
+"Fabibacter","Cyclobacteriaceae","Bacteroidia","High temperature",0.44,0.0165

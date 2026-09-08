@@ -1,0 +1,5 @@
+"Comparison","Taxonomy","ASV","Method","Effect","Effect_metric","q_value"
+"Control vs AB","Formosa (Flavobacteriaceae)","ASV93","ALDEx2","↑1.73","ALDEx2 effect size",0.009
+"Control vs AB","Candidatus Thioglobus (Thioglobaceae)","ASV180","ANCOM-BC2","↑2.6×","fold change (2^LFC)",0.037
+"Control vs AB","OM60(NOR5) clade (Halieaceae)","ASV35","ANCOM-BC2","↑2.3×","fold change (2^LFC)",0.037
+"Control vs HT","Flavobacteriaceae (unresolved)","ASV57","ANCOM-BC2","↑4.3×","fold change (2^LFC)",0.031
