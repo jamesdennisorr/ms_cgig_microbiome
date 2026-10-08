@@ -1,19 +1,22 @@
-# Early-Life Microbiome Perturbations Shape Disease Susceptibility in Pacific Oyster (*Crassostrea gigas*)
+# Early-life microbiome perturbation alters later survival against *Vibrio aestuarianus* in the Pacific oyster *Crassostrea gigas*
 
 **Authors:** James A. Dennis-Orr\*, Marissa D. Wright-LaGreca, Timothy J. Green, Andrew H. Loudon
 
-**Target journal:** Applied and Environmental Microbiology
+**Target journal:** Diseases of Aquatic Organisms
 
-A 24-hour antibiotic or thermal perturbation applied on Day 1 post-fertilization changes which
-bacteria colonize Pacific oyster larvae. Those animals die at higher rates when challenged with
-*Vibrio aestuarianus* three months later. Alpha diversity never separates the treatments; community
-composition does, and 90 ASVs remain treatment-specific indicators at Day 15.
+Analysis code and processed data for the manuscript.
+
+Full-sibling larvae were exposed to antibiotics, heat (25.7°C) or both for the first 24 h after
+fertilization, then reared under common conditions. Alpha diversity never differed from controls,
+but community composition did, and treatment-specific taxa persisted to Day 15. At three months,
+heat and the combined treatment raised the mortality hazard about sevenfold on *V. aestuarianus*
+challenge. Antibiotics alone showed a non-significant trend in the same direction.
 
 ---
 
 ## Data
 
-**Raw sequence reads:** NCBI SRA, BioProject PRJXXXXXX, deposited upon acceptance.
+**Raw sequence reads:** NCBI SRA, BioProject accession to be added once deposited.
 
 **Processed data:** included here. `data/` holds everything scripts 02 through 08 need.
 
@@ -23,7 +26,7 @@ data/
 │   ├── James_MU42022_filtered_not_normalized.RDS   phyloseq object, unrarefied counts
 │   └── sample_metadata.csv                         sample metadata
 └── challenge/
-    └── vibrio_survival.csv                         challenge survival, 160 animals (2 low-dose controls excluded in 07)
+    └── vibrio_survival.csv                         challenge survival, 160 animals; 07 drops the 2 given a lower dose
 ```
 
 The RDS carries the OTU table, taxonomy (SILVA v138), sample data and the phylogenetic tree.
