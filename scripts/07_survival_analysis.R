@@ -5,6 +5,8 @@
 #
 #  Challenge well enters as a random effect. Tank is perfectly nested in
 #  treatment (one rearing tank each), so no term can separate the two.
+#  Two control animals (39, 40) received a lower Vibrio dose and are excluded,
+#  so every analysed animal had the same dose.
 
 #### 00. Front Matter ####
 # Clear space
@@ -29,6 +31,7 @@ ph_test.FN   <- "tables/cox_ph_test.csv"
 model.FN     <- "tables/coxme_model_summary.txt"
 fig5.FN      <- "figures/Figure5_cox_forest"
 per_well     <- 10       # spat per challenge well
+dose_kept    <- 2        # dose code analysed; code 1 is the lower dose given to animals 39 and 40
 seed         <- 100
 
 set.seed(seed)
@@ -57,6 +60,14 @@ dat.df <- dat.df %>%
 
 length(unique(dat.df$well))   # 16
 
+# Drop the low-dose animals AFTER wells are assigned. Filtering first would
+# shift every later control animal into the wrong well.
+table(dat.df$treatment, dat.df$dose)   # dose 1: A only, 2 animals
+dat.df <- dat.df %>%
+  filter(dose == dose_kept)
+
+nrow(dat.df)   # 158
+
 dat.df <- dat.df %>%
   mutate(treatment = factor(treatment
                             , levels = c("A", "B", "C", "D")
@@ -68,7 +79,7 @@ dat.df <- dat.df %>%
 dat.df %>%
   group_by(treatment) %>%
   summarise(n = n(), deaths = sum(Binary), pct = round(100 * mean(Binary), 1))
-# Control 15.0, Antibiotics 47.5, High temperature 70.0, Antibiotics + HT 67.5
+# Control 15.8 (6/38), Antibiotics 47.5, High temperature 70.0, Antibiotics + HT 67.5
 
 
 #### 03. Mixed-effects Cox model ####
@@ -109,7 +120,7 @@ hr.df <- data.frame(Treatment = names(fixed_coef)
          )
 
 hr.df %>% dplyr::select(Treatment, HR, CI_lower, CI_upper, p_value)
-# HT 7.96 (1.94-32.65) p 0.004 | AB+HT 7.40 (1.79-30.48) p 0.006 | AB 3.66 (0.86-15.60) p 0.079
+# HT 7.54 (1.84-30.87) p 0.005 | AB+HT 7.01 (1.70-28.82) p 0.007 | AB 3.47 (0.82-14.76) p 0.092
 
 cox.df <- hr.df %>%
   dplyr::select(Treatment, HR, CI_lower, CI_upper, p_value) %>%
@@ -128,10 +139,12 @@ fig5.plot <- ggplot(hr.df, aes(x = HR, y = Treatment, xmin = CI_lower, xmax = CI
   geom_text(aes(label = label), nudge_y = -0.30, hjust = 0.5
             , size = 3.2, colour = "black", lineheight = 0.9) +
   geom_vline(xintercept = 1, linetype = "dashed", linewidth = 0.6, colour = "grey30") +
-  # Log scale because the intervals span nearly two orders of magnitude
+  # Log scale because the intervals span nearly two orders of magnitude.
+  # The upper limit must exceed every CI_upper (max 30.87): ggplot drops any
+  # interval that crosses a scale limit, which erased the heat arms' bars at 30.
   scale_x_log10(name = "Hazard ratio (log scale)"
                 , breaks = c(1, 2, 5, 10, 20)
-                , limits = c(0.5, 30)
+                , limits = c(0.5, 40)
                 ) +
   scale_colour_manual(values = TREATMENT_COLORS, guide = "none") +
   theme_classic(base_size = 14) +

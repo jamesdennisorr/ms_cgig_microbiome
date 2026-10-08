@@ -23,7 +23,7 @@ data/
 │   ├── James_MU42022_filtered_not_normalized.RDS   phyloseq object, unrarefied counts
 │   └── sample_metadata.csv                         sample metadata
 └── challenge/
-    └── vibrio_survival.csv                         challenge survival, 160 animals
+    └── vibrio_survival.csv                         challenge survival, 160 animals (2 low-dose controls excluded in 07)
 ```
 
 The RDS carries the OTU table, taxonomy (SILVA v138), sample data and the phylogenetic tree.

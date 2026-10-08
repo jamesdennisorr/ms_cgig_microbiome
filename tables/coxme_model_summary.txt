@@ -3,31 +3,31 @@
 
 Cox mixed-effects model fit by maximum likelihood
   Data: dat.df
-  events, n = 80, 160
-  Iterations= 11 70 
+  events, n = 80, 158
+  Iterations= 10 64 
                     NULL Integrated    Fitted
-Log-likelihood -381.8117  -355.4209 -340.8391
+Log-likelihood -380.4191  -355.1301 -340.6021
 
                   Chisq    df          p   AIC   BIC
-Integrated loglik 52.78  4.00 9.4670e-11 44.78 35.25
- Penalized loglik 81.95 11.28 8.3578e-13 59.38 32.50
+Integrated loglik 50.58  4.00 2.7347e-10 42.58 33.05
+ Penalized loglik 79.63 11.26 2.2797e-12 57.11 30.29
 
 Model:  Surv(TE, Binary) ~ treatment + (1 | well) 
 Fixed coefficients
                               coef exp(coef)  se(coef)    z      p
-treatmentAntibiotics      1.298037  3.662102 0.7393241 1.76 0.0790
-treatmentHigh temperature 2.074601  7.961372 0.7200983 2.88 0.0040
-treatmentAntibiotics + HT 2.000906  7.395755 0.7224617 2.77 0.0056
+treatmentAntibiotics      1.245137  3.473412 0.7381575 1.69 0.0920
+treatmentHigh temperature 2.020651  7.543230 0.7189872 2.81 0.0049
+treatmentAntibiotics + HT 1.947184  7.008924 0.7213394 2.70 0.0069
 
 Random effects
  Group Variable  Std Dev   Variance 
- well  Intercept 0.7852398 0.6166015
+ well  Intercept 0.7821125 0.6116999
 
 === Random effect variance ===
 
 $well
 Intercept 
-0.6166015 
+0.6116999 
 
 
 === Standard Cox (PH diagnostics only) ===
@@ -36,24 +36,24 @@ Call:
 coxph(formula = Surv(TE, Binary) ~ treatment, data = dat.df, 
     ties = "efron")
 
-  n= 160, number of events= 80 
+  n= 158, number of events= 80 
 
                             coef exp(coef) se(coef)     z Pr(>|z|)    
-treatmentAntibiotics      1.3587    3.8911   0.4686 2.899  0.00374 ** 
-treatmentHigh temperature 1.9904    7.3186   0.4510 4.413 1.02e-05 ***
-treatmentAntibiotics + HT 1.9318    6.9022   0.4523 4.271 1.94e-05 ***
+treatmentAntibiotics      1.3029    3.6799   0.4686 2.780  0.00543 ** 
+treatmentHigh temperature 1.9347    6.9217   0.4510 4.290 1.79e-05 ***
+treatmentAntibiotics + HT 1.8761    6.5278   0.4523 4.148 3.35e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
                           exp(coef) exp(-coef) lower .95 upper .95
-treatmentAntibiotics          3.891     0.2570     1.553     9.749
-treatmentHigh temperature     7.319     0.1366     3.024    17.714
-treatmentAntibiotics + HT     6.902     0.1449     2.844    16.749
+treatmentAntibiotics          3.680     0.2717     1.469     9.219
+treatmentHigh temperature     6.922     0.1445     2.860    16.752
+treatmentAntibiotics + HT     6.528     0.1532     2.690    15.840
 
-Concordance= 0.726  (se = 0.035 )
-Likelihood ratio test= 33.78  on 3 df,   p=2e-07
-Wald test            = 23.15  on 3 df,   p=4e-05
-Score (logrank) test = 29.32  on 3 df,   p=2e-06
+Concordance= 0.721  (se = 0.035 )
+Likelihood ratio test= 31.67  on 3 df,   p=6e-07
+Wald test            = 22.06  on 3 df,   p=6e-05
+Score (logrank) test = 27.52  on 3 df,   p=5e-06
 
 
 === PH assumption (Schoenfeld) ===
@@ -64,11 +64,11 @@ GLOBAL     3.18  3 0.36
 
 === HR table ===
 
-                                 Treatment       HR  CI_lower CI_upper
-treatmentAntibiotics           Antibiotics 3.662102 0.8598152 15.59753
-treatmentHigh temperature High temperature 7.961372 1.9410106 32.65487
-treatmentAntibiotics + HT Antibiotics + HT 7.395755 1.7947777 30.47575
+                                 Treatment       HR CI_lower CI_upper
+treatmentAntibiotics           Antibiotics 3.473412 0.817380 14.76008
+treatmentHigh temperature High temperature 7.543230 1.843075 30.87249
+treatmentAntibiotics + HT Antibiotics + HT 7.008924 1.704649 28.81826
                               p_value
-treatmentAntibiotics      0.079138233
-treatmentHigh temperature 0.003964187
-treatmentAntibiotics + HT 0.005613086
+treatmentAntibiotics      0.091638317
+treatmentHigh temperature 0.004947806
+treatmentAntibiotics + HT 0.006946444
